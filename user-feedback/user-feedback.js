@@ -19,20 +19,5 @@ define([
       });
     });
     
-    /*
-    UserFeedbackApp.addInitializer(function (){
-        app.header.show(header);
-        app.footer.show(footer);
-        require([
-            'common/AppRouter',
-            'modules/one/OneApp',
-            'modules/two/TwoApp'
-        ], function(AppRouter){
-            new AppRouter();
-            Backbone.history.start({pushState: true})
-        });
-    });
-    */
-    
     return UserFeedbackApp;
 });
