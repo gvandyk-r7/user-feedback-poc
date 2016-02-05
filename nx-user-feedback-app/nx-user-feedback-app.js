@@ -13,7 +13,7 @@ define([
       if (Backbone.history) {
         Backbone.history.start();
       }
-      require(["user-feedback/views/main-layout-view"], function (MainLayoutView) {
+      require(["nx-user-feedback-app/views/main-layout-view"], function (MainLayoutView) {
     	  UserFeedbackApp.mainLayoutView = new MainLayoutView();
     	  UserFeedbackApp.mainLayoutView.render();
       });

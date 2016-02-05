@@ -25,34 +25,19 @@
     "handlebars": "3.0.3",
     "i18next": "1.7.4",
     "jquery": "2.1.1",
-    "jquery-ui": "1.11.3",
-    "less.js": "1.7.5",
-    "lodash": "#3.10.1",
+    "jquery-ui": "1.12.0-beta.1",
+    "less": "1.7.5",
+    "lodash": "3.10.1",
     "ui-component-actions-dialog": "git@github.com:rapid7/ui-component-actions-dialog.git#v1.11.17-fix",
     "ui-component-left-navigation": "git@github.com:rapid7/ui-component-left-navigation.git#0.4.5",
     "ui-component-navigation": "git@github.com:rapid7/ui-component-navigation.git#0.1.11",
     "underscore": "1.8.3",
     "requirejs": "2.1.17",
-    "requirejs-text": "2.0.14",
-    "requirejs-promise": "1.2.0",
+    "requirejs-text": "2.0.12"
   },
   "devDependencies": {
-    "jasmine": "2.0.4",
-    "jquery-ui": "~1.11.4",
-    "polyglot": "~0.4.3"
-  },
-  /*
-  "dependencies": {
-    "backbone": "^1.2.3",
-    "backbone.localstorage": "^1.1.16",
-    "backbone.marionette": "^2.4.4",
-    "backbone.radio": "^1.0.2",
-    "bootstrap": "^3.3.6",
-    "jquery": "^2.1.1",
-    "requirejs": "^2.1.22",
-    "requirejs-text": "^2.0.12",
-    "tpl": "^0.3.0",
-    "underscore": "^1.8.3"
+    "jasmine": "2.1.0",
+    "jquery-ui": "1.10.5",
+    "polyglot": "0.5.0"
   }
-  */
 }

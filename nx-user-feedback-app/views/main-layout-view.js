@@ -4,24 +4,23 @@ define([
         'underscore',
         'marionette',
         'radio',
-        'user-feedback/views/main-item-view',
-        'user-feedback/regions/dialog-region',
-        'text!user-feedback/templates/dialog-region.tmpl'
+        'nx-user-feedback-app/views/main-item-view',
+        'nx-user-feedback-app/regions/dialog-region',
+        'text!nx-user-feedback-app/templates/dialog-region.tmpl'
         ], function(_, Marionette, Radio, MainItemView, DialogRegion, DialogRegionTemplate) {
 	return Marionette.LayoutView.extend({
-		el: '#user-feedback-layout-view',
+		el: '#nx-user-feedback-app',
 		template: _.template(DialogRegionTemplate),
 		
 		regions: {
 			dialog: DialogRegion
 		},
 
-		onBeforeRender: function() {
 			//this.getRegion('dialog').show(new MainItemView());//, options);
 			//Radio.channel('root').comply('set:content', function(contentView) {
 			//	this.getRegion('dialog').show(contentView);
 			//});
-		},
+		
 		onRender: function() {
 			this.getRegion('dialog').show(new MainItemView());//, options);
 		}

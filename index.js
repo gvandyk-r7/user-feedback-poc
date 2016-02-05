@@ -35,16 +35,15 @@ require.config({
             deps: ['jquery']
         }
 
-	},
-    waitSeconds: 10
+	}
 });
 
 require([
-    'user-feedback/user-feedback',
+    'nx-user-feedback-app/nx-user-feedback-app',
     'jquery',
 	'bootstrap'
-], function (UserFeedback) {
+], function (NxUserFeedbackApp) {
 	'use strict';
 
-	UserFeedback.start({});
+	NxUserFeedbackApp.start({});
 });
