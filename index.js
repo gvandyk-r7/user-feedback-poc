@@ -8,7 +8,8 @@ require.config({
 		localStorage: 'node_modules/backbone.localStorage/backbone.localStorage-min',
 		tpl: 'node_modules/tpl/lib/tpl',
         bootstrap: 'node_modules/bootstrap/dist/js/bootstrap.min',
-        text: 'node_modules/requirejs-text/text'
+        text: 'node_modules/requirejs-text/text',
+        typeahead: 'node_modules/backbone.typeahead/backbone.typeahead.min'
 	},
 
 	shim: {
@@ -33,6 +34,11 @@ require.config({
 
         bootstrap: {
             deps: ['jquery']
+        },
+        
+        typeahead: {
+        	exports: 'Backbone.TypeaheadCollection',
+        	deps: ['backbone', 'underscore']
         }
 
 	}

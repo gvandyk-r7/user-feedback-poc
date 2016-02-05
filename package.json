@@ -20,6 +20,7 @@
     "backbone": "1.2.1",
     "backbone.marionette": "2.4.2",
     "backbone.radio": "1.0.2",
+    "backbone.typeahead": "^1.0.0",
     "bootstrap": "3.3.4",
     "font-awesome": "4.2.0",
     "handlebars": "3.0.3",
@@ -28,12 +29,12 @@
     "jquery-ui": "1.12.0-beta.1",
     "less": "1.7.5",
     "lodash": "3.10.1",
+    "requirejs": "2.1.17",
+    "requirejs-text": "2.0.12",
     "ui-component-actions-dialog": "git@github.com:rapid7/ui-component-actions-dialog.git#v1.11.17-fix",
     "ui-component-left-navigation": "git@github.com:rapid7/ui-component-left-navigation.git#0.4.5",
     "ui-component-navigation": "git@github.com:rapid7/ui-component-navigation.git#0.1.11",
-    "underscore": "1.8.3",
-    "requirejs": "2.1.17",
-    "requirejs-text": "2.0.12"
+    "underscore": "1.8.3"
   },
   "devDependencies": {
     "jasmine": "2.1.0",
