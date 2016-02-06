@@ -5,11 +5,10 @@ define([
         'marionette',
         'radio',
         'nx-user-feedback-app/views/main-item-view',
-        'nx-user-feedback-app/views/typeahead-input-view',
         'nx-user-feedback-app/regions/modal-region',
         'nx-user-feedback-app/regions/modal-body-region',
         'text!nx-user-feedback-app/templates/modal-layout-view.tmpl',
-        ], function(_, Marionette, Radio, MainItemView, TypeaheadInputView, ModalRegion, ModalBodyRegion, ModalLayoutViewTemplate, mlv) {
+        ], function(_, Marionette, Radio, MainItemView, ModalRegion, ModalBodyRegion, ModalLayoutViewTemplate, mlv) {
 	return Marionette.LayoutView.extend({
 		el: '#nx-user-feedback-app',
 		
@@ -28,7 +27,7 @@ define([
 		
 		onRender: function() {
 			this.getRegion('modal').show(new MainItemView());//, options);
-			this.getRegion('modalBody').show(new TypeaheadInputView());//, options);
+			//this.getRegion('modalBody').show(new TypeaheadInputView());//, options);
 		}
 	})
 });

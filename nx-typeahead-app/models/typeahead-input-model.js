@@ -1,7 +1,6 @@
 define([
     'backbone'
-], function (Marionette) {
+], function (Backbone) {
     return Backbone.Model.extend({
-    	'foo': 'bar'
     });
 });

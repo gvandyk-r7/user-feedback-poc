@@ -1,23 +1,24 @@
 define([
+    'backbone',
     'marionette'
-], function (Marionette) {
+], function (Backbone, Marionette) {
     'use strict';
 
-    var UserFeedbackApp = new Marionette.Application();
+    var NxUserFeedbackApp = new Marionette.Application();
     
-    UserFeedbackApp.on("before:start", function(options) {
+    NxUserFeedbackApp.on("before:start", function(options) {
       options.somethingOrOther = true;
     });
     
-    UserFeedbackApp.on("start", function(options) {
-      if (Backbone.history) {
+    NxUserFeedbackApp.on("start", function(options) {
+      if (Backbone.History.started !== true) {
         Backbone.history.start();
       }
       require(["nx-user-feedback-app/views/main-layout-view"], function (MainLayoutView) {
-    	  UserFeedbackApp.mainLayoutView = new MainLayoutView();
-    	  UserFeedbackApp.mainLayoutView.render();
+    	  NxUserFeedbackApp.mainLayoutView = new MainLayoutView();
+    	  NxUserFeedbackApp.mainLayoutView.render();
       });
     });
     
-    return UserFeedbackApp;
+    return NxUserFeedbackApp;
 });
