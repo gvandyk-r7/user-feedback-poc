@@ -20,18 +20,25 @@ define([
 			modalBody: ModalBodyRegion
 		},
 		
+		childEvents: {
+		    'submit:form': 'onChildSubmitForm'
+		},
+		
+		onChildSubmitForm: function (childView) {
+			console.log('A child view fired submit:form');
+		},
+		
 			//this.getRegion('dialog').show(new MainItemView());//, options);
 			//Radio.channel('root').comply('set:content', function(contentView) {
 			//	this.getRegion('dialog').show(contentView);
 			//});
 		
 		onRender: function() {
-			var modalModel = new ModalModel({ title: 'Report Incorrect Fingerprint' })
-			new MainItemView({
+			var modalModel = new ModalModel({ title: 'Report Incorrect Fingerprint' });
+			var mainItemView = new MainItemView({
 				model: modalModel
-			})
-			this.getRegion('modal').show(mainItemView);//, options);
-			//this.getRegion('modalBody').show(new TypeaheadInputView());//, options);
+			});
+			this.getRegion('modal').show(mainItemView);
 		}
 	})
 });

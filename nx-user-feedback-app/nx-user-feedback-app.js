@@ -7,6 +7,7 @@ define([
     var NxUserFeedbackApp = new Marionette.Application();
     
     NxUserFeedbackApp.on("before:start", function(options) {
+      options = options || {};
       options.somethingOrOther = true;
     });
     

@@ -55,4 +55,6 @@ require([
 	NxUserFeedbackApp.on('start', function() {
 		NxTypeaheadApp.start({});
 	});
+	
+	NxUserFeedbackApp.start();
 });

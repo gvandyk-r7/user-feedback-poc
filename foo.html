@@ -5,8 +5,8 @@
 				aria-hidden="true">&times;</button>
 			<h4 class="modal-title" id="myModalLabel"><%= title %></h4>
 		</div>
-		<form class="form-horizontal">
-			<div id="modal-body-region" class="modal-body">
+		<div id="modal-body-region" class="modal-body">
+			<form class="form-horizontal">
 				<div class="form-group">
 					<label for="fingerprint" class="col-sm-2 control-label">Correct
 						Fingerprint</label>
@@ -20,17 +20,18 @@
 						<textarea id="notes" class="form-control" rows="3"></textarea>
 					</div>
 				</div>
-				<p>Reporting an incorrect fingerprint and sending the associated
-					log information may take a few minutes. You can continue to use the
-					product during this time. Please note that this action does not
-					automatically create a support case, nor does it change the
-					fingerprint that is stored for this asset.</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary l2-btn"
-					data-dismiss="modal">Cancel</button>
+			</form>
+			<p>Reporting an incorrect fingerprint and sending the associated
+				log information may take a few minutes. You can continue to use the
+				product during this time. Please note that this action does not
+				automatically create a support case, nor does it change the
+				fingerprint that is stored for this asset.</p>
+		</div>
+		<div class="modal-footer">
+			<button type="button" class="btn btn-primary l2-btn" data-dismiss="modal">Cancel</button>
+			<form>
 				<button type="submit" class="btn btn-primary">Send Now</button>
-			</div>
-		</form>
+			</form>
+		</div>
 	</div>
 </div>

@@ -7,26 +7,8 @@ define([
 
     	  childView: TypeaheadResultView,
     	  
-    	  childViewContainer: "select",
+    	  childViewContainer: "datalist",
 
-    	  template: _.template(TypeaheadCompositeViewTemplate),
-
-    	  modelEvents: {
-    	    "change": "modelChanged"
-    	  },
-
-    	  collectionEvents: {
-    	    "add": "modelAdded"
-    	  },
-
-    	  modelChanged: function(e) {
-    	    // e.preventDefault();
-    	    console.log('changed', e);
-    	  },
-
-    	  modelAdded: function(e) {
-    	    // e.preventDefault();
-    	    console.log('added', e);
-    	  }
+    	  template: _.template(TypeaheadCompositeViewTemplate)
     });
 });
