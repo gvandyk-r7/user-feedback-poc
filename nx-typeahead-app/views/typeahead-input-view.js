@@ -14,11 +14,12 @@ define([
 		},
 
 		events: {
-			'keydown @ui.input': 'performFingerprintSearch'
+			'keyup @ui.input': 'performSearch'
 		},
 
-		performFingerprintSearch: function(e) {
-			console.log("SEARCH");
+		performSearch: function(e) {
+			var query = this.ui.input.val();
+			this.triggerMethod('perform:search', query);
 		},
 	});
 });
