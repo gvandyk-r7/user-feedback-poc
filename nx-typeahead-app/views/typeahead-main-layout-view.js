@@ -50,9 +50,7 @@ define([ 'underscore', 'marionette', 'radio',
 			require(["nx-typeahead-app/collections/typeahead-collection",
 			         "nx-typeahead-app/views/typeahead-composite-view"],
 			         function (TypeaheadCollection, TypeaheadCompositeView) {
-
 				self.typeaheadCompositeView.render();
-
 				self.getRegion('upper').show(self.typeaheadInputView);//, options);
 				self.getRegion('lower').show(self.typeaheadCompositeView);//, options);
 			});

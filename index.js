@@ -52,6 +52,8 @@ require([
 ], function (NxUserFeedbackApp, NxTypeaheadApp) {
 	'use strict';
 
-	NxUserFeedbackApp.start({});
+	NxUserFeedbackApp.start({}).then(function(a){
+		console.log('yay')
+	});
 	NxTypeaheadApp.start({});
 });
