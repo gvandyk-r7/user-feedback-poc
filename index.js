@@ -51,9 +51,8 @@ require([
 	'bootstrap'
 ], function (NxUserFeedbackApp, NxTypeaheadApp) {
 	'use strict';
-
-	NxUserFeedbackApp.start({}).then(function(a){
-		console.log('yay')
+	
+	NxUserFeedbackApp.on('start', function() {
+		NxTypeaheadApp.start({});
 	});
-	NxTypeaheadApp.start({});
 });
