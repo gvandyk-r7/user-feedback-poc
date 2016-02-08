@@ -11,6 +11,14 @@ define([
 		if (Backbone.History.started !== true) {
 			Backbone.history.start();
 		}
+		
+		require(["nx-typeahead-app/views/typeahead-main-layout-view",
+		         "text!nx-typeahead-app/templates/typeahead-main-layout-view.tmpl"],
+				function(TypeaheadMainLayoutView, TypeaheadMainLayoutViewTemplate) {
+			var view = new TypeaheadMainLayoutView();
+			view.render();
+		});
+		/*
 		require(["nx-typeahead-app/collections/typeahead-collection",
 		         "nx-typeahead-app/views/typeahead-composite-view"],
 		         function (TypeaheadCollection, TypeaheadCompositeView) {
@@ -28,7 +36,7 @@ define([
 				collection: fingerprintList
 			});
 			NxTypeaheadApp.typeaheadCompositeView.render();
-		});
+		});*/
 	});
 
 	return NxTypeaheadApp;
