@@ -7,13 +7,17 @@ define([
         'nx-user-feedback-app/views/main-item-view',
         'nx-user-feedback-app/models/user-feedback-form-model',
         'nx-user-feedback-app/regions/modal-region',
+        'nx-user-feedback-app/regions/modal-body-region',
         'nx-user-feedback-app/regions/typeahead-input-region',
         'nx-user-feedback-app/regions/typeahead-list-region',
+        'nx-user-feedback-app/regions/status-message-region',
         'nx-user-feedback-app/views/typeahead-composite-view',
         'nx-user-feedback-app/views/typeahead-input-view',
+        'nx-user-feedback-app/views/success-message-view',
+        'nx-user-feedback-app/views/error-message-view',
         'nx-user-feedback-app/collections/typeahead-collection',
         'text!nx-user-feedback-app/templates/modal-layout-view.tmpl',
-        ], function(_, Marionette, Radio, MainItemView, UserFeedbackFormModel, ModalRegion, TypeaheadInputRegion, TypeaheadListRegion, TypeaheadCompositeView, TypeaheadInputView, TypeaheadCollection, ModalLayoutViewTemplate) {
+        ], function(_, Marionette, Radio, MainItemView, UserFeedbackFormModel, ModalRegion, ModalBodyRegion, TypeaheadInputRegion, TypeaheadListRegion, StatusMessageRegion, TypeaheadCompositeView, TypeaheadInputView, SuccessMessageView, ErrorMessageView, TypeaheadCollection, ModalLayoutViewTemplate) {
 	return Marionette.LayoutView.extend({
 		el: '#nx-user-feedback-app',
 		
@@ -22,7 +26,8 @@ define([
 		regions: {
 			modal: ModalRegion,
 			typeaheadInput: TypeaheadInputRegion,
-			typeaheadList: TypeaheadListRegion
+			typeaheadList: TypeaheadListRegion,
+			statusMessage: StatusMessageRegion
 		},
 		
 		childEvents: {
@@ -31,24 +36,31 @@ define([
 		},
 
 		onChildPerformSearch : function(childView, query) {
-			// TODO: Do actual query here
+			// TODO: Do actual XHR query in model
 			this.typeaheadCollection.reset([{result: 'foo'}, { result: 'bar'}])
 		},
 		
 		onChildSubmitForm: function (childView) {
+			var self = this;
+			childView.ui.sendLogsButton.prop('disabled', true);
 			this.userFeedbackFormModel.save(null, {
 			    success: function (model, response) {
-			        console.log("success", model, response);
+			    	childView.ui.sendLogsButton.prop('disabled', false);
+			    	self.getRegion('statusMessage').show(self.successMessageView);
 			    },
 			    error: function (model, response) {
-			        console.log("error", model, response);
+			    	childView.ui.sendLogsButton.prop('disabled', false);
+			    	self.getRegion('statusMessage').show(self.errorMessageView);
 			    }
 			});
 		},
 		
 		initialize: function(options) {
-			//var modalModel = new ModalModel({ title: 'Report Incorrect Fingerprint' });
 			this.userFeedbackFormModel = new UserFeedbackFormModel();
+			
+			this.errorMessageView = new ErrorMessageView();
+			
+			this.successMessageView = new SuccessMessageView();
 			
 			this.mainItemView = new MainItemView({
 				model: this.userFeedbackFormModel

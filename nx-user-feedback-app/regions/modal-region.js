@@ -2,7 +2,7 @@ define([
     'marionette'
 ], function(Marionette){
     return Marionette.Region.extend({
-    	el: '#dialog-region',
+    	el: '#modal-region',
     	
         onShow: function(view){
             this.listenTo(view, "dialog:close", this.closeDialog);

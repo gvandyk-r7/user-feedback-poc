@@ -14,24 +14,15 @@ define([
 		},
 		
 		ui: {
-			notes: '#user-feedback-notes'
+			notes: '#user-feedback-notes',
+			sendLogsButton: 'button[type=submit]'
 		},
 
 		events: {
 			'change @ui.notes': 'setUserFeedbackNotes'
 		},
 		
-		modelEvents: {
-		    "change": "modelChanged"
-		},
-
-		modelChanged: function(model, value) {
-			//console.dir(model.toJSON());
-			//console.dir(value.toJSON);
-		},
-
 		setUserFeedbackNotes: function(e) {
-			console.dir(e);
 			this.model.set('notes', this.ui.notes.val());
 		}
 	});
