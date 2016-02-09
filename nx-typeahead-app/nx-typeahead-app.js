@@ -7,7 +7,8 @@ define([
 
 	var NxTypeaheadApp = new Marionette.Application();
 
-	NxTypeaheadApp.on("start", function(results) {
+	NxTypeaheadApp.on("start", function(options) {
+		
 		if (Backbone.History.started !== true) {
 			Backbone.history.start();
 		}
@@ -15,28 +16,9 @@ define([
 		require(["nx-typeahead-app/views/typeahead-main-layout-view",
 		         "text!nx-typeahead-app/templates/typeahead-main-layout-view.tmpl"],
 				function(TypeaheadMainLayoutView, TypeaheadMainLayoutViewTemplate) {
-			var view = new TypeaheadMainLayoutView();
+			var view = new TypeaheadMainLayoutView(options);
 			view.render();
 		});
-		/*
-		require(["nx-typeahead-app/collections/typeahead-collection",
-		         "nx-typeahead-app/views/typeahead-composite-view"],
-		         function (TypeaheadCollection, TypeaheadCompositeView) {
-
-			var fingerprintList = new TypeaheadCollection([{
-				result: 'windows 8.1'
-			}, {
-				result: 'ubuntu 12.04'
-			}, {
-				result: 'mac osx'
-			}]);
-
-			NxTypeaheadApp.typeaheadCompositeView = new TypeaheadCompositeView({
-				el: '#nx-typeahead-app',
-				collection: fingerprintList
-			});
-			NxTypeaheadApp.typeaheadCompositeView.render();
-		});*/
 	});
 
 	return NxTypeaheadApp;

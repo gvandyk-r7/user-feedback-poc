@@ -3,11 +3,11 @@ define([
         'marionette',
         'nx-typeahead-app/models/typeahead-input-model',
         'text!nx-typeahead-app/templates/typeahead-input-view.tmpl'
-        ], function (_, Marionette, TypeaheadModel, template) {
+        ], function (_, Marionette, TypeaheadInputModel, template) {
 	return Marionette.ItemView.extend({
 		template: _.template(template),
 		
-		model: new TypeaheadModel(),
+		model: new TypeaheadInputModel(),
 		
 		ui: {
 			input: '.typeahead-input'
@@ -17,9 +17,9 @@ define([
 			'keyup @ui.input': 'performSearch'
 		},
 
-		performSearch: function(e) {
+		performSearch: function() {
 			var query = this.ui.input.val();
 			this.triggerMethod('perform:search', query);
-		},
+		}
 	});
 });

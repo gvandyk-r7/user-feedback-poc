@@ -1,10 +1,7 @@
 define([
     'marionette'
 ], function(Marionette){
-
     return Marionette.Region.extend({
-    	el: '#modal-body-region',
-    	
+    	el: '#modal-body-region'
     });
-
 });

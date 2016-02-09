@@ -52,9 +52,5 @@ require([
 ], function (NxUserFeedbackApp, NxTypeaheadApp) {
 	'use strict';
 	
-	NxUserFeedbackApp.on('start', function() {
-		NxTypeaheadApp.start({});
-	});
-	
-	NxUserFeedbackApp.start();
+	NxUserFeedbackApp.start({});
 });
