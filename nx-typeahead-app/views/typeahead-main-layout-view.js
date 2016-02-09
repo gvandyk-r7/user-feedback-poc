@@ -53,8 +53,6 @@ define([ 'underscore', 'marionette', 'radio',
 				self.typeaheadCompositeView.render();
 				self.getRegion('upper').show(self.typeaheadInputView);//, options);
 				self.getRegion('lower').show(self.typeaheadCompositeView);//, options);
-
-				self.getOption('rootChannel').reply('some:request', 'food is good');
 			});
 		}
 	})

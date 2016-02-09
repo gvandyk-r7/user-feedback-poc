@@ -1,8 +1,7 @@
 define([
     'backbone',
     'marionette',
-    'radio'
-], function (Backbone, Marionette, Radio) {
+], function (Backbone, Marionette) {
     'use strict';
     
     var NxUserFeedbackApp = new Marionette.Application({});
@@ -11,11 +10,9 @@ define([
       if (Backbone.History.started !== true) {
         Backbone.history.start();
       }
-      require(["nx-user-feedback-app/views/main-layout-view", "nx-typeahead-app/nx-typeahead-app"], function (MainLayoutView, NxTypeaheadApp) {
-    	  var opts = {"rootChannel": new Radio.channel('typeahead')};
-    	  NxUserFeedbackApp.mainLayoutView = new MainLayoutView(opts);
-    	  NxUserFeedbackApp.mainLayoutView.render();
-    	  NxTypeaheadApp.start(opts);
+      require(["nx-user-feedback-app/views/main-layout-view"], function (MainLayoutView) {
+    	  var mainLayoutView = new MainLayoutView();
+    	  mainLayoutView.render();
       });
     });
     

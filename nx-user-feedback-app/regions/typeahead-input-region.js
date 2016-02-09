@@ -2,6 +2,6 @@ define([
     'marionette'
 ], function(Marionette){
     return Marionette.Region.extend({
-    	el: '#modal-body-region'
+    	el: '#typeahead-input-region'
     });
 });
