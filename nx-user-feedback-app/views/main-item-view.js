@@ -1,10 +1,9 @@
 define([
         'underscore',
         'marionette',
-        'nx-user-feedback-app/models/user-feedback-form-model',
         'text!nx-user-feedback-app/templates/main-item-view.tmpl'
         ],
-        function (_, Marionette, UserFeedbackFormModel, MainItemViewTemplate) {
+        function (_, Marionette, MainItemViewTemplate) {
 	'use strict';
 
 	return Marionette.ItemView.extend({
@@ -13,15 +12,13 @@ define([
 		triggers: {
 		    'submit form': 'submit:form'
 		},
-
-		model: new UserFeedbackFormModel(),
 		
 		ui: {
 			notes: '#user-feedback-notes'
 		},
 
 		events: {
-			'change @ui.fingerprint': 'setFingerprint'
+			'change @ui.notes': 'setUserFeedbackNotes'
 		},
 		
 		modelEvents: {

@@ -7,19 +7,22 @@ define([
 	return Marionette.ItemView.extend({
 		template: _.template(template),
 		
-		model: new TypeaheadInputModel(),
-		
 		ui: {
 			input: '.typeahead-input'
 		},
 
 		events: {
-			'keyup @ui.input': 'performSearch'
+			'keyup @ui.input': 'performSearch',
+			'change @ui.input': 'setFingerprint'
 		},
-
+		
 		performSearch: function() {
 			var query = this.ui.input.val();
 			this.triggerMethod('perform:search', query);
+		},
+		
+		setFingerprint: function() {
+			this.model.set('fingerprint', this.ui.input.val());
 		}
 	});
 });

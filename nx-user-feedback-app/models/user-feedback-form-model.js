@@ -5,6 +5,10 @@ define([
     	defaults: {
 		    "fingerprint": "",
 		    "notes": ""
+		},
+		urlRoot: "/user-feedback",
+		url: function() {
+			return this.urlRoot + '/?details=true';
 		}
     });
 });
