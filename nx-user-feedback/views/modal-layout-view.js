@@ -20,11 +20,11 @@ define([
 			modal: '.modal'
 		},
 		
-		onRender: function(view) {
+		onRender: function(event) {
 			// show the modal
 			this.ui.modal.modal();
 			
-			var modalContentLayoutView = new ModalContentLayoutView(view.options);
+			var modalContentLayoutView = new ModalContentLayoutView(event.options);
 			this.showChildView('dialogRegion', modalContentLayoutView);
 		}
 	})

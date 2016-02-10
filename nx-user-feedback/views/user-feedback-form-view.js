@@ -3,12 +3,12 @@ define([
         'marionette',
         'nx-user-feedback/models/user-feedback-form-model',
         'nx-user-feedback/collections/typeahead-collection',
-        'nx-user-feedback/views/typeahead-composite-view',
+        'nx-user-feedback/views/typeahead-datalist-view',
         'nx-user-feedback/views/notes-textarea-view',
         'nx-user-feedback/views/typeahead-input-view',
         'text!nx-user-feedback/templates/user-feedback-form-view.html'
         ],
-        function (_, Marionette, UserFeedbackFormModel, TypeaheadCollection, TypeaheadCompositeView, NotesTextareaView, TypeaheadInputView, UserFeedbackFormViewTemplate) {
+        function (_, Marionette, UserFeedbackFormModel, TypeaheadCollection, TypeaheadDatalistView, NotesTextareaView, TypeaheadInputView, UserFeedbackFormViewTemplate) {
 	'use strict';
 
 	return Marionette.LayoutView.extend({
@@ -23,9 +23,9 @@ define([
 			this.notesTextareaView = new NotesTextareaView({
 				model: this.userFeedbackFormModel
 			});
-			
+			console.log(this.notesTextareaView);
 			this.typeaheadCollection = new TypeaheadCollection();
-			this.typeaheadCompositeView = new TypeaheadCompositeView({
+			this.typeaheadDatalistView = new TypeaheadDatalistView({
 				collection: this.typeaheadCollection
 			});
 			
@@ -35,6 +35,8 @@ define([
 
 		tagName: 'form',
 		
+		className: 'form-horizontal',
+		
 		attributes: {
 			role: 'form'
 		},
@@ -43,7 +45,7 @@ define([
 		
 		regions: {
 			input: '.typeahead-input-region',
-			list: '.typeahead-list-region',
+			list: '.typeahead-datalist-region',
 			notes: '.notes-textarea-region'
 		},
 		
@@ -71,7 +73,7 @@ define([
 		
 		onBeforeShow: function() {
 			this.showChildView('input', this.typeaheadInputView);
-			this.showChildView('list', this.typeaheadCompositeView);
+			this.showChildView('list', this.typeaheadDatalistView);
 			this.showChildView('notes', this.notesTextareaView);
 		}
 	});

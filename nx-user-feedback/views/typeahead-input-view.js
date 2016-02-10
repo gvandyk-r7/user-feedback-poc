@@ -1,10 +1,9 @@
 define([
         'underscore',
         'marionette',
-        'nx-user-feedback-app/models/typeahead-input-model',
         'text!nx-user-feedback/templates/typeahead-input-view.html',
         'nx-form/views/nx-form-group-view'
-        ], function (_, Marionette, TypeaheadInputModel, TypeaheadInputViewTemplate, NxFormGroupView) {
+        ], function (_, Marionette, TypeaheadInputViewTemplate, NxFormGroupView) {
 	return NxFormGroupView.extend({
 		template: _.template(TypeaheadInputViewTemplate),
 		

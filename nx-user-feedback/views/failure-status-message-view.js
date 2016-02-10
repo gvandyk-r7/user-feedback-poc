@@ -8,5 +8,9 @@ define([
 
 	return Marionette.ItemView.extend({
 		template: _.template(FailureStatusMessageViewTemplate),
+		className: 'alert alert-danger col-xs-12',
+		attributes: {
+			role: 'alert'
+		}
 	});
 });

@@ -1,9 +1,10 @@
 define([
         'underscore',
         'marionette',
+        'nx-form/views/nx-form-group-view',
         'text!nx-user-feedback/templates/notes-textarea-view.html'
-        ], function (_, Marionette, NotesTextareaViewTemplate) {
-	return Marionette.ItemView.extend({
+        ], function (_, Marionette, NxFormGroupView, NotesTextareaViewTemplate) {
+	return NxFormGroupView.extend({
 		template: _.template(NotesTextareaViewTemplate),
 		
 		ui: {

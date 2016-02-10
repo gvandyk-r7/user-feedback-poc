@@ -12,10 +12,10 @@ define([
 		},
 
 		events: {
-			'click @ui.send': 'formSubmit',
+			'click @ui.send': 'sendButtonClicked',
 		},
 		
-		formSubmit: function() {
+		sendButtonClicked: function() {
 			this.triggerMethod('form:submit');
 		}
 	});
