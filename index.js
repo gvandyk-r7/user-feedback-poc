@@ -45,11 +45,10 @@ require.config({
 });
 
 require([
-    'nx-user-feedback-app/nx-user-feedback-app',
-    'nx-typeahead-app/nx-typeahead-app',
+    'nx-user-feedback/nx-user-feedback-app',
     'jquery',
 	'bootstrap'
-], function (NxUserFeedbackApp, NxTypeaheadApp) {
+], function (NxUserFeedbackApp) {
 	'use strict';
 	
 	NxUserFeedbackApp.start({});
